@@ -1,0 +1,15 @@
+{
+  "name": "@dwolla/dwolla-components",
+  "version": "0.0.0",
+  "description": "Dwolla Web Components",
+  "main": "dist/dwolla-components.js",
+  "repository": "https://github.com/Dwolla/dwolla.js",
+  "author": "Dwolla, Inc.",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --mode production"
+  },
+  "dependencies": {
+    "lit-element": "^2.3.1"
+  }
+}
