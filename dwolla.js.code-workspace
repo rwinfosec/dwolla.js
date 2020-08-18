@@ -1,0 +1,31 @@
+{
+  "folders": [
+    { "name": "dwolla.js", "path": "." },
+    { "name": "@dwolla/dwolla", "path": "./packages/dwolla" },
+    {
+      "name": "@dwolla/dwolla-components",
+      "path": "./packages/dwolla-components"
+    },
+    {
+      "name": "@dwolla/dwolla-react",
+      "path": "./packages/dwolla-react"
+    },
+    {
+      "name": "@dwolla/dwolla-examples",
+      "path": "./packages/dwolla-examples"
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      ".mdx-data/": true,
+      ".next/": true,
+      "node_modules/": true,
+      "yarn-error.log": true,
+      "lerna-error.log": true,
+      "dist/": true
+    }
+  },
+  "extensions": {
+    "recommendations": ["esbenp.prettier-vscode", "bierner.lit-html"]
+  }
+}

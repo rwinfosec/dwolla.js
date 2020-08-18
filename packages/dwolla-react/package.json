@@ -1,0 +1,24 @@
+{
+  "name": "@dwolla/dwolla-react",
+  "version": "0.0.0",
+  "description": "Dwolla React bindings",
+  "main": "dist/dwolla-react.js",
+  "repository": "https://github.com/Dwolla/dwolla.js",
+  "author": "Dwolla, Inc.",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --mode production"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.10.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "dependencies": {
+    "@dwolla/dwolla-components": "^0.0.0"
+  },
+  "peerDependencies": {
+    "react": "^15.5.4 || ^16.0.0-0",
+    "react-dom": "^15.5.4 || ^16.0.0-0"
+  }
+}

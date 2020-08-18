@@ -1,0 +1,19 @@
+{
+  "name": "@dwolla/dwolla-examples",
+  "description": "Dwolla JavaScript Examples",
+  "main": "index.js",
+  "repository": "https://github.com/Dwolla/dwolla.js",
+  "author": "Dwolla, Inc.",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "rm -rf .next/cache/ && next dev"
+  },
+  "dependencies": {
+    "@dwolla/dwolla": "^0.0.0",
+    "@dwolla/dwolla-react": "^0.0.0",
+    "next": "^9.5.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}

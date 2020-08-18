@@ -1,0 +1,22 @@
+name: "Verify"
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  verify:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: ["ubuntu-latest"]
+        node: ["14"]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+
+      - run: ./publish-release.sh
