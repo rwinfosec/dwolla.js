@@ -52,13 +52,13 @@ const customer = await dwolla.customers.createReceiveOnly({
 });
 ```
 
-## `@dwolla/dwolla-web-components`
+## `@dwolla/dwolla-components`
 
 ```html
 <html>
   <head>
     <script src="https://cdn.dwolla.com/v2/dwolla.js"></script>
-    <script src="https://cdn.dwolla.com/v2/dwolla-web-components/document-upload.js"></script>
+    <script src="https://cdn.dwolla.com/v2/dwolla-components/document-upload.js"></script>
   </head>
   <body>
     <dwolla-document-upload />

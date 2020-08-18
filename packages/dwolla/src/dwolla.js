@@ -1,19 +1,21 @@
-// type ClientArgsServer = {
-//   key: string;
-//   secret: string;
-//   environment: "sandbox" | "production";
-// };
+let _config = {
+  environment: "",
+  fetchToken: () => Promise.reject("Please call dwolla.configure(...)"),
+};
 
-// type ClientArgsBrowser = {
-//   getToken: () => Promise<string>;
-// };
+const dwolla = {
+  configure(config) {
+    _config = { ...config };
+  },
 
-export default function Dwolla(
-  opts /* : ClientArgsBrowser | ClientArgsServer */
-) {
-  return {
-    async get() {
-      return Promise.resolve({ body: "GOT" });
-    },
-  };
+  async post() {
+    const token = await _config.fetchToken();
+    alert(`environment: ${_config.environment} -- token: ${token}`);
+  },
+};
+
+export default dwolla;
+
+if (typeof window !== "undefined") {
+  window.dwolla = dwolla;
 }

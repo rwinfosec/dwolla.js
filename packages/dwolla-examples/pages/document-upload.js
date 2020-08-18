@@ -1,9 +1,15 @@
-import Dwolla from "@dwolla/dwolla";
+import dwolla from "@dwolla/dwolla";
 import DR from "@dwolla/dwolla-react";
 
-console.log(DR);
+dwolla.configure({
+  environment: "sandbox",
+  fetchToken: () => Promise.resolve("MY_TOKEN"),
+});
 
 export default function MyPage() {
-  console.log(Dwolla());
-  return <DR.DocumentUpload />;
+  return (
+    <div>
+      <DR.DocumentUpload />
+    </div>
+  );
 }
