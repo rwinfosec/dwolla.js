@@ -1,6 +1,19 @@
+const DWOLLA_CONTENT_TYPE = 'application/vnd.dwolla.v1.hal+json';
+const CLIENT_TOKEN_ACTIONS = {
+  'CustomerDocumentsCreate': 'customer.documents.create'
+};
+const ENVIRONMENT = {
+  'local': 'http://localhost:17188',
+  'sandbox': 'https://api-sandbox.dwolla.com',
+  'production': 'https://api.dwolla.com'
+};
+
 let _config = {
   environment: "",
-  fetchToken: () => Promise.reject("Please call dwolla.configure(...)"),
+  styles: "",
+  token: () => Promise.reject("Please call dwolla.configure(...)"),
+  success: (res) => Promise(res),
+  error: (err) => Promise(err)
 };
 
 const dwolla = {
@@ -8,10 +21,50 @@ const dwolla = {
     _config = { ...config };
   },
 
-  async post() {
-    const token = await _config.fetchToken();
-    alert(`environment: ${_config.environment} -- token: ${token}`);
+  post(url, data) {
+    return _config.token().then(token => {
+      return fetch(`${ENVIRONMENT[_config.environment]}/${url}`, {
+          method: 'POST',
+          mode: 'cors',
+          body: data,
+          headers: {
+              'Accept': DWOLLA_CONTENT_TYPE,
+              'Authorization': `Bearer ${token}`
+          },   
+      })
+      .then(response => {
+        console.log(response);
+        response.json()
+      })
+      .then(result => {
+          console.log('Success:', result);
+          _config.success(result);
+          return result;
+      })
+      .catch(error => {
+          console.error('Error:', error);
+          _config.error(error);
+          return error;
+      });
+    });
   },
+
+  generateClientToken(action, resourceId) {
+    this.post('client-tokens', {action, _links: _generateLinksFor(action, resourceId)})
+  },
+
+  _generateLinksFor(action, resourceId) {
+    switch(action) {
+      case CLIENT_TOKEN_ACTIONS.CustomerDocumentsCreate:
+        return `${ENVIRONMENT[_config.environment]}/customers/${resourceId}`;
+      default:
+        return ``;
+    }
+  },
+
+  styles() {
+    return _config.styles;
+  }
 };
 
 export default dwolla;

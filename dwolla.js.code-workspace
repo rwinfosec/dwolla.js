@@ -13,6 +13,10 @@
     {
       "name": "@dwolla/dwolla-examples",
       "path": "./packages/dwolla-examples"
+    },
+    {
+      "name": "@dwolla/dwolla-express",
+      "path": "./packages/dwolla-express"
     }
   ],
   "settings": {
