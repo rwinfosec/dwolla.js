@@ -354,6 +354,7 @@ if (typeof HTMLElement !== "undefined") {
               />
             </div>
             <span class="dwolla-customer-text">
+<<<<<<< HEAD
               By checking this box you agree to
               <a class="dwolla-link" href="${this.terms}" target="_blank"
                 >Our Terms of Service</a
@@ -376,6 +377,9 @@ if (typeof HTMLElement !== "undefined") {
                 target="_blank"
                 >Privacy Policy</a
               >
+=======
+              By checking this box you agree to <a class="dwolla-link" href="${this.terms}" target="_blank">Our Terms of Service</a> and <a class="dwolla-link" href="${this.privacy}" target="_blank">Privacy Policy</a> as well as our Partner <a class="dwolla-link" href="https://www.dwolla.com/legal/tos/" target="_blank">Dwolla’s Terms of Service</a> and <a class="dwolla-link" href="https://www.dwolla.com/legal/privacy/" target="_blank">Privacy Policy</a>
+>>>>>>> 6db7c23... psimp-40: add customer-update component
             </span>
           </div>
           <div class="dwolla-submit dwolla-customer-submit">
