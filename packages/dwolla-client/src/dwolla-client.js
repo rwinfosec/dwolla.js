@@ -22,6 +22,8 @@ const dwolla = {
   },
 
   post(url, data) {
+    alert('here');
+    console.log('here');
     return _config.token().then(token => {
       return fetch(`${ENVIRONMENT[_config.environment]}/${url}`, {
           method: 'POST',

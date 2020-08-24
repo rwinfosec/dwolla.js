@@ -118,11 +118,19 @@ if (typeof HTMLElement !== "undefined") {
             <input name="ssn" class="dwolla-customer-input dwolla-customer-ssn" type="text" placeholder="SSN" @change="${this.handleInput}" />
 
 
+<<<<<<< HEAD
           <div class="dwolla-customer-tos">
             <div class="dwolla-customer-checkbox">  
               <input type="checkbox" id="dwolla-check" name="agreed" value="agree" @change="${this.handleInput}">
             </div>
             <span class="dwolla-customer-text">
+=======
+          <div class="dwolla-customer-tos" style="height:80px;">
+            <div class="dwolla-customer-checkbox" style="width:5%; height:80px; display:inline; float:left;">  
+              <input type="checkbox" id="dwolla-check" name="agreed" value="agree" @change="${this.handleInput}">
+            </div>
+            <span class="dwolla-customer-text" style="width:91%; height:80px; display:inline; float:left; margin-left:10px;">
+>>>>>>> 799f64d... psimp-40: add customer-update component
               By checking this box you agree to <a class="dwolla-link" href="${this.terms}" target="_blank">Our Terms of Service</a> and <a class="dwolla-link" href="${this.privacy}" target="_blank">Privacy Policy</a> as well as our Partner <a class="dwolla-link" href="https://www.dwolla.com/legal/tos/" target="_blank">Dwolla’s Terms of Service</a> and <a class="dwolla-link" href="https://www.dwolla.com/legal/privacy/" target="_blank">Privacy Policy</a>
             </span>
           </div>

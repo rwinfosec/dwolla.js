@@ -160,11 +160,15 @@
 
   .dwolla-customer-tos {
     width: 100%;
+<<<<<<< HEAD
     height:80px;
+=======
+>>>>>>> 799f64d... psimp-40: add customer-update component
     font-family: 'Poppins', sans-serif;
     font-size: 12px;
     margin-top:20px;
   }
+<<<<<<< HEAD
 
   .dwolla-customer-checkbox {
     width:5%;
@@ -180,3 +184,5 @@
     float: left;
     margin-left: 10px;
   }
+=======
+>>>>>>> 799f64d... psimp-40: add customer-update component
