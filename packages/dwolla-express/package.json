@@ -4,7 +4,6 @@
     "description": "demo for drop-ins",
     "main": "demo/index.js",
     "scripts": {
-      "test": "test",
       "dev": "node pages/index.js"
     },
     "keywords": [

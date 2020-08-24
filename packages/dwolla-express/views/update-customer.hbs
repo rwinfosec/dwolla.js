@@ -23,7 +23,7 @@
             dwolla.configure({
               environment: "local",
               styles: "/main.css",
-              token: () => Promise.resolve("udeIdtuwFOSpP59E3TxsQBucU45wYeV6EEVpzP5C9WYiJzo50f"),
+              token: () => Promise.resolve("xBgJ5cEJ9uiveNQmjAe19q2Bt2kwvOoJF79njBZDIbxvo1e7lZ"),
               success: (res) => alert(res),
               error: (err) => alert(err)
             });
@@ -37,9 +37,16 @@
                     <div class="learn-header">
                         <img class="learn-dwolla-logo" src="https://slack-integration-sandbox.dwolla.com/images/dwolla-icon.svg">
                     </div>
-                    <h3>Upload A Document</h3>
-                    <div style="border-style:solid; border-color:#ed8b4e; border-width:1px; padding:20px; width:121px;">
-                        <dwolla-document-upload customerId=""></dwolla-document-upload >
+                    <h3>Update A Customer</h3>
+                    <div style="border-style:solid; border-color:#ed8b4e; border-width:1px; padding:20px; width:325px;">
+                        <dwolla-customer-update 
+                            customerId = "ac83beb9-bc84-48a9-a0af-e5cff88e4cc8"
+                            firstName="Cory"
+                            lastName="Coryson"
+                            email="ccoryson@dwolla.com"
+                            terms="https://docs.dwolla.com/"
+                            privacy="https://developers.dwolla.com/">
+                        </dwolla-customer-update>
                     </div>
                 </div>
                 <div class="learn-right">
@@ -56,13 +63,10 @@
             environment: "sandbox",
             styles: "/main.css",
             token: () => Promise.resolve("MY_TOKEN"),
-            success: (res) => Promise.resolve(res),
-            error: (err) => Promise.resolve(err),
         });
     &lt;/script&gt;
 
-    &lt;dwolla-document-upload&gt;
-    
+    &lt;dwolla-customer-update&gt;
 </pre>
                     </div>
                 </div>

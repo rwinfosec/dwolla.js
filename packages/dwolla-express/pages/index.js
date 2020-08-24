@@ -18,6 +18,10 @@ app.get("/upload-document", function (req, res) {
   res.status(200).render(`document`, {});
 });
 
+app.get("/update-customer", function (req, res) {
+  res.status(200).render(`update-customer`, {});
+});
+
 app.get("/dwolla-components.js", function (req, res) {
   var component = path.join(
     __dirname + "../../../dwolla-components/dist/browser/dwolla-components.js"
