@@ -2,12 +2,13 @@
   "name": "@dwolla/dwolla-react",
   "version": "0.0.0",
   "description": "Dwolla React bindings",
-  "main": "dist/dwolla-react.js",
+  "main": "dist/npm/dwolla-react.js",
   "repository": "https://github.com/Dwolla/dwolla.js",
   "author": "Dwolla, Inc.",
   "license": "MIT",
   "scripts": {
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "dev": "yarn build --watch"
   },
   "devDependencies": {
     "@babel/preset-react": "^7.10.4",

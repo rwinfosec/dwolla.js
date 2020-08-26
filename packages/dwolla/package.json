@@ -2,11 +2,12 @@
   "name": "@dwolla/dwolla",
   "version": "0.0.0",
   "description": "Dwolla JavaScript client",
-  "main": "dist/dwolla.js",
+  "main": "dist/npm/dwolla.js",
   "repository": "https://github.com/Dwolla/dwolla.js",
   "author": "Dwolla, Inc.",
   "license": "MIT",
   "scripts": {
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "dev": "yarn build --watch"
   }
 }

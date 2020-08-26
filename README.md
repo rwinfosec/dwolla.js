@@ -11,44 +11,19 @@ Tools used:
 ### Getting Started
 
 ```
-yarn
-yarn bootstrap
-yarn build
 yarn dev
 ```
 
 ## `@dwolla/dwolla`
 
 ```javascript
-import Dwolla from "@dwolla/dwolla";
+import dwolla from "@dwolla/dwolla";
 
-// server-side
-const dwolla = Dwolla({
-  key: "my_dwolla_app_key",
-  secret: "my_dwolla_app_secret",
-  environment: "sandbox",
-});
-```
-
-or...
-
-```javascript
-// client-side
-const dwolla = Dwolla({
+dwolla.configure({
   fetchToken: () =>
     fetch("https://myapp.com/get_dwolla_token")
       .then((res) => res.json())
       .then((body) => body.token),
-});
-```
-
-Once you've created a `Dwolla` client you can make requests:
-
-```javascript
-const customer = await dwolla.customers.createReceiveOnly({
-  firstName: "Alex",
-  lastName: "Smith",
-  email: "asmith@gmail.com",
 });
 ```
 
@@ -64,9 +39,9 @@ const customer = await dwolla.customers.createReceiveOnly({
     <dwolla-document-upload />
 
     <script type="text/javascript">
-      Dwolla({
+      dwolla.configure({
         fetchToken: () =>
-          fetch("https://myapp.com/get_dwolla_token")
+          fetch("https://myapp.com/get_dwolla_token", { method: "post" })
             .then((res) => res.json())
             .then((body) => body.token),
       });

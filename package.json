@@ -7,19 +7,20 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
-    "dev": "lerna run dev --stream",
+    "dev": "yarn && yarn bootstrap && lerna run dev --stream --parallel",
     "test": "lerna run test --stream"
   },
   "devDependencies": {
     "@babel/core": "^7.11.0",
     "@babel/preset-env": "^7.11.0",
     "babel-loader": "^8.1.0",
+    "deepmerge": "^4.2.2",
     "lerna": "^3.22.1",
     "prettier": "^2.0.5",
-    "webpack": "^4.44.1",
-    "webpack-cli": "^3.3.12",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "webpack": "^5.0.0-beta.28",
+    "webpack-cli": "^3.3.12"
   },
   "private": true
 }
