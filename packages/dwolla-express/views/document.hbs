@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.dwolla.com/com/dist/images/favicons/favicon-16x16_d8c975a0.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.dwolla.com/com/dist/images/favicons/favicon-32x32_a4dac4e7.png">
+        <title>Dwolla</title>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400|Roboto:400,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://w3rwh66232.execute-api.us-west-2.amazonaws.com/dev/styles">
+        <style>
+            body
+            {
+                text-align:center;
+                margin: 0;
+                background-color: #ffffff;
+            }
+        </style>
+        <script type="text/javascript" src="/dwolla.js"></script>
+        <script type="module" src="/dwolla-components.js"></script>
+        <link rel="stylesheet" href="/main.css">
+        <link rel="stylesheet" href="/code.css">
+        <script>
+            dwolla.configure({
+              environment: "local",
+              styles: "/main.css",
+              token: () => Promise.resolve("udeIdtuwFOSpP59E3TxsQBucU45wYeV6EEVpzP5C9WYiJzo50f"),
+              success: (res) => alert(res),
+              error: (err) => alert(err)
+            });
+        </script>
+    </head>
+    <body>
+        <div class="learn-banner" style="height:1820px;">
+            <div class="learn-banner-image"><img src="https://slack-integration-sandbox.dwolla.com/images/dwolla-logo-white.svg"></div>
+            <div class="learn-container">
+                <div class="learn-left" style="text-align:left;">
+                    <div class="learn-header">
+                        <img class="learn-dwolla-logo" src="https://slack-integration-sandbox.dwolla.com/images/dwolla-icon.svg">
+                    </div>
+                    <h3>Upload A Document</h3>
+                    <div style="border-style:solid; border-color:#ed8b4e; border-width:1px; padding:20px; width:121px;">
+                        <dwolla-document-upload customerId=""></dwolla-document-upload >
+                    </div>
+                </div>
+                <div class="learn-right">
+                    <p style="color:white;">
+                        This is an alpha for the 'document upload' drop-in component. It is still a work in progress and may not completely represent the final product.
+                    </p>
+                    <div class="code-container">
+                    <h3>Uploading A Document With Drop-Ins (Copy + Paste Integration)</h3>
+<pre>
+    &lt;script type="text/javascript" src="/dwolla.js"&gt;&lt;/script&gt;
+    &lt;script type="module" src="/dwolla-components.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        dwolla.configure({
+            environment: "sandbox",
+            styles: "/main.css",
+            token: () => Promise.resolve("MY_TOKEN"),
+            success: (res) => Promise.resolve(res),
+            error: (err) => Promise.resolve(err),
+        });
+    &lt;/script&gt;
+
+    &lt;dwolla-document-upload&gt;
+    
+</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

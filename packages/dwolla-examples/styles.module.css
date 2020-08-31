@@ -1,0 +1,14 @@
+.container {
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 5px auto;
+    color: #354153;
+    width: 800px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 19px;
+    background: #fff;
+    padding: 50px 45px;
+    box-shadow: 0 2px 4px 0 rgba(53,65,83, .12), 0 0 2px 0 rgba(53,65,83, .12);
+}

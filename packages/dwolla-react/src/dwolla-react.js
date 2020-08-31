@@ -4,8 +4,7 @@ import "@dwolla/dwolla-components";
 export const DocumentUpload = () => {
   return (
     <div>
-      <h1>React Doc Upload</h1>
-      <dwolla-document-upload />
+      <dwolla-document-upload customerId="12345" />
     </div>
   );
 };

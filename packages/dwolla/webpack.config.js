@@ -5,7 +5,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "dwolla.js",
-    libraryTarget: "commonjs2",
+    // libraryTarget: "commonjs2",
   },
   mode: "production",
   module: {
