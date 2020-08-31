@@ -1,7 +1,7 @@
 import dwolla from "@dwolla/dwolla";
 import DwollaReact from "@dwolla/dwolla-react";
-import Head from 'next/head';
-import styles from '../styles.module.css'
+import Head from "next/head";
+import styles from "../styles.module.css";
 
 dwolla.configure({
   environment: "sandbox",
@@ -16,7 +16,7 @@ export default function MyPage() {
         <link href="/styles.css" rel="stylesheet" />
       </Head>
       <div className={styles.container}>
-        <dwolla-document-upload token="token123" />
+        <DwollaReact.DocumentUpload />
       </div>
     </div>
   );
