@@ -1,5 +1,6 @@
 const path = require("path");
 const merge = require("deepmerge");
+const S3Uploader = require("webpack-s3-uploader");
 
 const config = (name, override = {}) =>
   merge(
@@ -31,6 +32,25 @@ const config = (name, override = {}) =>
   );
 
 module.exports = [
-  config("browser"),
+  config("browser", {
+    output: {
+      publicPath: process.env.CDN_PUBLIC_PATH || "/",
+    },
+    plugins: process.env.CDN_PUBLIC_PATH
+      ? [
+          new S3Uploader({
+            basePath: "alpha",
+            s3Options: {
+              accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+              secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+              region: process.env.AWS_REGION,
+            },
+            s3UploadOptions: {
+              Bucket: process.env.S3_BUCKET,
+            },
+          }),
+        ]
+      : [],
+  }),
   config("npm", { output: { libraryTarget: "commonjs2" } }),
 ];
