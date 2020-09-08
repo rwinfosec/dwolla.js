@@ -1,3 +1,5 @@
+### ⚠️ This repo contains alpha software not intended for use in production.
+
 # Dwolla.js
 
 This repo contains JavaScript packages for using Dwolla with various platforms and/or frameworks.
