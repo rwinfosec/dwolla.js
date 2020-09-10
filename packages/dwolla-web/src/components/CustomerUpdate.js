@@ -1,3 +1,6 @@
+import "./Error.js";
+import "./Success.js";
+
 if (typeof HTMLElement !== "undefined") {
   const { LitElement, html } = require("lit-element");
 
@@ -12,6 +15,7 @@ if (typeof HTMLElement !== "undefined") {
         privacy: { attribute: true },
         successMessage: { type: String },
         errorMessage: { type: String },
+        isLoading: { type: String },
       };
     }
 
@@ -36,10 +40,12 @@ if (typeof HTMLElement !== "undefined") {
       
       this.successMessage = "";
       this.errorMessage = "";
+      this.isLoading = "";
     }
 
     handleSubmit() {
       if (this.validate()) {
+        this.isLoading = "dwolla-loading";
         let data = {
           firstName: this.firstName,
           lastName: this.lastName,
@@ -52,14 +58,15 @@ if (typeof HTMLElement !== "undefined") {
           dateOfBirth: this.dob.value,
           ssn: this.ssn.value,
         }
-
+        
         dwolla
-          .post(`customers/${this.customerId}`, JSON.stringify(data))
+          .post(`customers/${this.customerId}`, JSON.stringify(data), 'application/vnd.dwolla.v1.hal+json')
           .then((res) => {
-            if (res && res.success) {
+            this.isLoading = "";
+            if (res && res._links) {
               this.handleSuccess();
             } else {
-              this.handleError(res.message);
+              this.handleError(res);
             }
           });
       }
@@ -74,9 +81,9 @@ if (typeof HTMLElement !== "undefined") {
       this.errorMessage = "";
     }
 
-    handleError(msg) {
+    handleError(res) {
       this.successMessage = "";
-      this.errorMessage = msg;
+      this.errorMessage = res.message;
     }
 
     validate() {
@@ -106,36 +113,68 @@ if (typeof HTMLElement !== "undefined") {
             <dwolla-success message="${this.successMessage}"></dwolla-success>
             <dwolla-error message="${this.errorMessage}"></dwolla-error>
 
-            <input class="dwolla-customer-input dwolla-customer-firstName" type="text" placeholder="First Name" value=${this.firstName} readonly />
-            <input class="dwolla-customer-input dwolla-customer-lastName" type="text" placeholder="Last Name" value=${this.lastName} readonly />
-            <input class="dwolla-customer-input dwolla-customer-email" type="text" placeholder="Email" value=${this.email} readonly />
-            <input name="address1" class="dwolla-customer-input dwolla-customer-address1" type="text" placeholder="Address 1" @change="${this.handleInput}" />
-            <input name="address2" class="dwolla-customer-input dwolla-customer-address2" type="text" placeholder="Address 2" @change="${this.handleInput}" />
-            <input name="city" class="dwolla-customer-input dwolla-customer-city" type="text" placeholder="City" @change="${this.handleInput}" />
-            <input name="state" class="dwolla-customer-input dwolla-customer-state" type="text" placeholder="State" @change="${this.handleInput}" />
-            <input name="postalCode" class="dwolla-customer-input dwolla-customer-postal" type="text" placeholder="Postal Code" @change="${this.handleInput}" />
-            <input name="dob" class="dwolla-customer-input dwolla-customer-dob" type="text" placeholder="Date Of Birth (YYYY-MM-DD)" @change="${this.handleInput}"/>
-            <input name="ssn" class="dwolla-customer-input dwolla-customer-ssn" type="text" placeholder="SSN" @change="${this.handleInput}" />
+            <div class="dwolla-input-container">
+              <label for="firstName">First Name</label>
+              <input id="firstName" class="dwolla-customer-input dwolla-customer-firstName" type="text" placeholder="First Name" value=${this.firstName} readonly />
+            </div>
+
+            <div class="dwolla-input-container">
+              <label for="lastName">Last Name</label>
+              <input id="lastName" class="dwolla-customer-input dwolla-customer-lastName" type="text" placeholder="Last Name" value=${this.lastName} readonly />
+            </div>
+
+            <div class="dwolla-input-container">
+              <label for="email">Email</label>
+              <input id="email" class="dwolla-customer-input dwolla-customer-email" type="text" placeholder="Email" value=${this.email} readonly />
+              </div>
+
+            <div class="dwolla-input-container">
+              <label for="address1">Address 1</label>
+              <input id="address1" name="address1" class="dwolla-customer-input dwolla-customer-address1" type="text" placeholder="Address 1" @change="${this.handleInput}" />
+            </div>
+        
+            <div class="dwolla-input-container">
+              <label for="address2">Address 2</label>
+              <input id="address2" name="address2" class="dwolla-customer-input dwolla-customer-address2" type="text" placeholder="Address 2" @change="${this.handleInput}" />
+            </div>
+
+            <div class="dwolla-input-container">
+              <label for="city">City</label>
+              <input id="city" name="city" class="dwolla-customer-input dwolla-customer-city" type="text" placeholder="City" @change="${this.handleInput}" />
+            </div>
+
+            <div class="dwolla-input-container">
+              <label for="state">State</label>
+              <input id="state" name="state" class="dwolla-customer-input dwolla-customer-state" type="text" placeholder="State" @change="${this.handleInput}" />
+            </div>
+
+            <div class="dwolla-input-container">
+              <label for="postalCode">Postal Code</label>
+              <input id="postalCode" name="postalCode" class="dwolla-customer-input dwolla-customer-postal" type="text" placeholder="Postal Code" @change="${this.handleInput}" />
+            </div>
+
+            <div class="dwolla-input-container">
+              <label for="dob">Date Of Birth</label>
+              <input id="dob" name="dob" class="dwolla-customer-input dwolla-customer-dob" type="text" placeholder="Date Of Birth (YYYY-MM-DD)" @change="${this.handleInput}"/>
+            </div>
+
+            <div class="dwolla-input-container">
+              <label for="ssn">SSN</label>
+              <input id="ssn" name="ssn" class="dwolla-customer-input dwolla-customer-ssn" type="text" placeholder="SSN" @change="${this.handleInput}" />
+            </div>
 
 
-<<<<<<< HEAD
           <div class="dwolla-customer-tos">
             <div class="dwolla-customer-checkbox">  
-              <input type="checkbox" id="dwolla-check" name="agreed" value="agree" @change="${this.handleInput}">
+              <label for="termsCheckbox" style="display:none;">Terms of Service Agreement</label>
+              <input id="termsCheckbox" type="checkbox" id="dwolla-check" name="agreed" value="agree" @change="${this.handleInput}">
             </div>
             <span class="dwolla-customer-text">
-=======
-          <div class="dwolla-customer-tos" style="height:80px;">
-            <div class="dwolla-customer-checkbox" style="width:5%; height:80px; display:inline; float:left;">  
-              <input type="checkbox" id="dwolla-check" name="agreed" value="agree" @change="${this.handleInput}">
-            </div>
-            <span class="dwolla-customer-text" style="width:91%; height:80px; display:inline; float:left; margin-left:10px;">
->>>>>>> 799f64d... psimp-40: add customer-update component
-              By checking this box you agree to <a class="dwolla-link" href="${this.terms}" target="_blank">Our Terms of Service</a> and <a class="dwolla-link" href="${this.privacy}" target="_blank">Privacy Policy</a> as well as our Partner <a class="dwolla-link" href="https://www.dwolla.com/legal/tos/" target="_blank">Dwolla’s Terms of Service</a> and <a class="dwolla-link" href="https://www.dwolla.com/legal/privacy/" target="_blank">Privacy Policy</a>
+              By checking this box you agree to <a class="dwolla-link" href="${this.terms}" target="_blank">Our Terms of Service</a> and <a class="dwolla-link" href="${this.privacy}" target="_blank">Privacy Policy</a> as well as our Vendor <a class="dwolla-link" href="https://www.dwolla.com/legal/tos/" target="_blank">Dwolla’s Terms of Service</a> and <a class="dwolla-link" href="https://www.dwolla.com/legal/privacy/" target="_blank">Privacy Policy</a>
             </span>
           </div>
           <div class="dwolla-submit dwolla-customer-submit">
-            <input type="submit" value="Agree & Continue" @click="${this.handleSubmit}" />
+            <input class="${this.isLoading}" type="submit" value="Agree & Continue" @click="${this.handleSubmit}" />
           </div>
         </div>`;
     }

@@ -1,188 +1,68 @@
-.dwolla-document-submit input[type="submit"] {
-    border: 0;
-    cursor: pointer;
-    display: inline-block;
-    width: 120px;
-    margin-top: 10px;
-    margin-bottom: 0px;
-    padding: 10px 20px;
-    transition: box-shadow .5s, background-color .5s, border .5s;
-    border-radius: 5px;
+.container {
+    height:1420px;
+    background-color:#2d2d48;
     font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 21px;
-    text-align: center;
-    text-decoration: none;
-    color: #fff;
-    background-color: #5e4e76;
-    box-shadow: 0 2px 4px 0 rgba(53,65,83, .12), 0 0 2px 0 rgba(53,65,83, .12);
-}
-
-.dwolla-submit input[type="submit"] {
-  border: 0;
-  cursor: pointer;
-  display: inline-block;
-  width: 120px;
-  margin-top: 10px;
-  margin-bottom: 0px;
-  padding: 10px 20px;
-  transition: box-shadow .5s, background-color .5s, border .5s;
-  border-radius: 5px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 21px;
-  text-align: center;
-  text-decoration: none;
-  color: #fff;
-  background-color: #5e4e76;
-  box-shadow: 0 2px 4px 0 rgba(53,65,83, .12), 0 0 2px 0 rgba(53,65,83, .12);
-}
-
-.dwolla-customer-submit input[type="submit"] {
-  border: 0;
-  cursor: pointer;
-  display: inline-block;
-  width: 200px;
-  margin-left:60px;
-  margin-right:60px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  padding: 10px 20px;
-  transition: box-shadow .5s, background-color .5s, border .5s;
-  border-radius: 5px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 21px;
-  text-align: center;
-  text-decoration: none;
-  color: #fff;
-  background-color: #5e4e76;
-  box-shadow: 0 2px 4px 0 rgba(53,65,83, .12), 0 0 2px 0 rgba(53,65,83, .12);
-}
-
-.dwolla-customer-input {
-  border: 0;
-  cursor: pointer;
-  display: inline-block;
-  width: 120px;
-  margin-top: 10px;
-  margin-bottom: 0px;
-  padding: 10px 20px;
-  transition: box-shadow .5s, background-color .5s, border .5s;
-  border-radius: 5px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 21px;
-  text-align: left;
-  text-decoration: none;
-  background-color: #fff;
-  color: #5e4e76;
-  box-shadow: 0 2px 4px 0 rgba(53,65,83, .12), 0 0 2px 0 rgba(53,65,83, .12);
-}
-
-.dwolla-document-choose input[type="file"] {
-    display: none;
-}
-
-.dwolla-document-chooser {
-    border: 0;
-    cursor: pointer;
-    display: inline-block;
-    margin-top: 10px;
-    margin-bottom: 0px;
-    padding: 10px 20px;
-    transition: box-shadow .5s, background-color .5s, border .5s;
-    border-radius: 5px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 21px;
-    text-align: center;
-    text-decoration: none;
-    color: #5e4e76;
-    background-color: #fff;
-    box-shadow: 0 2px 4px 0 rgba(53,65,83, .12), 0 0 2px 0 rgba(53,65,83, .12);
-}
-
-.dwolla-document-type select {
-    border: 0;
-    cursor: pointer;
-    display: inline-block;
-    margin-top: 5px;
-    margin-bottom: 0px;
-    padding: 10px 20px;
-    transition: box-shadow .5s, background-color .5s, border .5s;
-    border-radius: 5px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 21px;
-    text-align: center;
-    color: #5e4e76;
-    background-color: #fff;
-    box-shadow: 0 2px 4px 0 rgba(53,65,83, .12), 0 0 2px 0 rgba(53,65,83, .12);
-  }
-
-  .dwolla-document-name-display {
-    text-align: center;
-    padding:5px;
-  }
-
-  #dwolla-success {
-    background-color: #DDF0E0;
-    color: #58b467;
-    text-align:center;
-    padding:10px;
-    border-radius:4px;
-    border-color: #58b467;
-    border-style:solid; 
-    border-width: 1px;
-  }
-
-  #dwolla-error {
-    background-color: #FED8D6;
-    color: #C63C32;
-    text-align:center;
-    padding:10px;
-    border-radius:4px;
-    border-color: #C63C32;
-    border-style:solid; 
-    border-width: 1px;
-  }
-
-  .dwolla-link {
     color:white;
-  }
+}
 
-  .dwolla-customer-tos {
-    width: 100%;
-<<<<<<< HEAD
-    height:80px;
-=======
->>>>>>> 799f64d... psimp-40: add customer-update component
-    font-family: 'Poppins', sans-serif;
-    font-size: 12px;
-    margin-top:20px;
-  }
-<<<<<<< HEAD
+.container-sm {
+    text-align:center;
+    margin-bottom:50px;
+}
 
-  .dwolla-customer-checkbox {
-    width:5%;
-    height:80px;
-    display:inline;
+.container-menu {
+    width: 1000px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.menu-item a {
+    margin:10px;
+    padding:10px;
+    border-style:solid;
+    border-color:white;
     float:left;
-  }
+    color:#354153;
+    background-color:white;
+    text-decoration:none;
+}
 
-  .dwolla-customer-text {
-    width: 91%;
-    height: 80px;
-    display: inline;
-    float: left;
-    margin-left: 10px;
-  }
-=======
->>>>>>> 799f64d... psimp-40: add customer-update component
+.orange-border {
+    border-style:solid;
+    border-color:#ed8b4e;
+    border-width:1px;
+    padding:20px;
+    width:400px;
+    margin-left:auto;
+    margin-right:auto; 
+}
+
+.banner-image {
+    height:43px;
+    width:169px;
+    padding:10px;
+}
+
+.code-container {
+    border-radius: 5px;
+    text-align: left;
+    margin: 0 auto 5px auto;
+    color: #354153;
+    width: 960px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 19px;
+    background: #fff;
+    padding: 5px 10px;
+    box-shadow: 0 2px 4px 0 rgba(53,65,83, .12), 0 0 2px 0 rgba(53,65,83, .12);
+}
+
+.pre {
+    width: 740px;
+    font-family: 'monospace';
+    font-weight: 300;
+    text-align:left;
+}
