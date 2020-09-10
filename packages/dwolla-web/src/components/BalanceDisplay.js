@@ -1,4 +1,4 @@
-import "./Error.js";
+import "./Error";
 
 if (typeof HTMLElement !== "undefined") {
   const { LitElement, html } = require("lit-element");
@@ -14,14 +14,14 @@ if (typeof HTMLElement !== "undefined") {
 
     constructor() {
       super();
-      this.balance = "$45.50";
+      this.balance = "";
       this.styles = dwolla.styles();
 
       this.errorMessage = "";
     }
 
     firstUpdated(changedProperties) {
-      // this.fetchBalance();
+        this.fetchBalance();
     }
 
     fetchBalance() {
