@@ -28,13 +28,13 @@ const dwolla = {
           mode: 'cors',
           body: data,
           headers: {
+              'Content-Type': DWOLLA_CONTENT_TYPE,
               'Accept': DWOLLA_CONTENT_TYPE,
               'Authorization': `Bearer ${token}`
           },   
       })
       .then(response => {
-        console.log(response);
-        response.json()
+        return response.json();
       })
       .then(result => {
           console.log('Success:', result);
