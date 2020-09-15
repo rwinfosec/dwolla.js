@@ -21,6 +21,14 @@ app.get("/", function (req, res) {
   res.status(200).render(`landing`, {});
 });
 
+app.get("/create-customer", function (req, res) {
+  generateAccessToken().then(a_res => {
+    generateClientToken(a_res.access_token, 'customer.create').then(c_res => {
+      res.status(200).render(`create-customer`, {token: c_res.token });
+    })
+  });
+});
+
 app.get("/upload-document", function (req, res) {
   generateAccessToken().then((a_res) => {
     generateClientToken(
@@ -110,19 +118,16 @@ function generateClientToken(token, action, customerId) {
     })
     .then((response) => {
       return response.data;
-    })
-    .catch(() => {
-      return "err";
+    }).catch(error => {
+      return error;
     });
 }
 
 function generateAccessToken() {
-  const url = `${ENVIRONMENT[env]}/token`;
-  const clientId = "VabnSDwRGZ8z41fK9LnxcyyslWT5L4e4iBJVACqhpaIJeAe2Mx";
-  const clientSecret = "SWgBTRFz2tn87rMwUs0IQzJEQjQMHUBmksmBydsa3KscsVoAN4";
-  const authHeader =
-    "Basic " +
-    new Buffer(clientId + ":" + clientSecret, "UTF-8").toString("base64");
+  let url = `${ENVIRONMENT[env]}/token`;
+  let clientId = '';
+  let clientSecret = '';
+  let authHeader = 'Basic ' + new Buffer(clientId + ':' + clientSecret, 'UTF-8').toString('base64');
 
   return axios
     .post(url, qs.stringify({ grant_type: "client_credentials" }), {

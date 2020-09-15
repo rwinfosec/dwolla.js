@@ -1,5 +1,5 @@
-import "./Error.js";
-import "./Success.js";
+import "./Error";
+import "./Success";
 
 if (typeof HTMLElement !== "undefined") {
   const { LitElement, html } = require("lit-element");

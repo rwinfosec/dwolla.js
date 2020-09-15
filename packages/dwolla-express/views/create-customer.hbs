@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.dwolla.com/com/dist/images/favicons/favicon-16x16_d8c975a0.png">
@@ -14,8 +14,7 @@
                 background-color: #ffffff;
             }
         </style>
-        <script type="text/javascript" src="/dwolla.js"></script>
-        <script type="module" src="/dwolla-components.js"></script>
+        <script type="text/javascript" src="/dwolla-web.js"></script>
         <link rel="stylesheet" href="/styles/main.css">
         <link rel="stylesheet" href="/styles/create-custom.css">
         <script>
@@ -30,14 +29,14 @@
     </head>
     <body>
         <div class="container">
-            <div class="banner-image"><img src="https://slack-integration-sandbox.dwolla.com/images/dwolla-logo-white.svg"></div>
+            <div class="banner-image"><img alt="Dwolla Logo" src="https://slack-integration-sandbox.dwolla.com/images/dwolla-logo-white.svg"></div>
             <div class="container-sm">
                 <h3>Create Customer</h3>
                 <div class="orange-border">
-                    <dwolla-vcr-flow 
+                    <dwolla-customer-create 
                         terms="https://docs.dwolla.com/"
                         privacy="https://developers.dwolla.com/">
-                    </dwolla-vcr-flow>
+                    </dwolla-customer-create>
                 </div>
             </div>
             <div class="container-sm">
