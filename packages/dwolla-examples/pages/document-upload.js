@@ -1,5 +1,4 @@
-import dwolla from "@dwolla/dwolla";
-import DwollaReact from "@dwolla/dwolla-react";
+import dwolla, { DocumentUpload } from "@dwolla/dwolla-react";
 import Head from "next/head";
 import styles from "../styles.module.css";
 
@@ -16,7 +15,7 @@ export default function MyPage() {
         <link href="/styles.css" rel="stylesheet" />
       </Head>
       <div className={styles.container}>
-        <DwollaReact.DocumentUpload />
+        <DocumentUpload />
       </div>
     </div>
   );

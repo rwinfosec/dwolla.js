@@ -1,10 +1,10 @@
 {
   "folders": [
     { "name": "dwolla.js", "path": "." },
-    { "name": "@dwolla/dwolla", "path": "./packages/dwolla" },
+    { "name": "@dwolla/dwolla-client", "path": "./packages/dwolla-client" },
     {
-      "name": "@dwolla/dwolla-components",
-      "path": "./packages/dwolla-components"
+      "name": "@dwolla/dwolla-web",
+      "path": "./packages/dwolla-web"
     },
     {
       "name": "@dwolla/dwolla-react",

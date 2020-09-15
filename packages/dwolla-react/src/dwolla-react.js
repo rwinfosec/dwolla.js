@@ -1,5 +1,5 @@
 import React from "react";
-import "@dwolla/dwolla-components";
+import dwolla from "@dwolla/dwolla-web";
 
 export const DocumentUpload = () => {
   return (
@@ -9,6 +9,4 @@ export const DocumentUpload = () => {
   );
 };
 
-export default {
-  DocumentUpload,
-};
+export default dwolla;

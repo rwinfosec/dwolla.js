@@ -1,13 +1,17 @@
 {
-  "name": "@dwolla/dwolla",
+  "name": "@dwolla/dwolla-web",
   "version": "0.0.0",
-  "description": "Dwolla JavaScript client",
-  "main": "dist/npm/dwolla.js",
+  "description": "Dwolla Web SDK",
+  "main": "dist/npm/dwolla-web.js",
   "repository": "https://github.com/Dwolla/dwolla.js",
   "author": "Dwolla, Inc.",
   "license": "MIT",
   "scripts": {
     "build": "webpack --mode production",
     "dev": "yarn build --watch"
+  },
+  "dependencies": {
+    "@dwolla/dwolla-client": "^0.0.0",
+    "lit-element": "^2.3.1"
   }
 }

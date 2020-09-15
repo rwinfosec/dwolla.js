@@ -16,7 +16,7 @@
     "react-dom": "^16.13.1"
   },
   "dependencies": {
-    "@dwolla/dwolla-components": "^0.0.0"
+    "@dwolla/dwolla-web": "^0.0.0"
   },
   "peerDependencies": {
     "react": "^15.5.4 || ^16.0.0-0",
