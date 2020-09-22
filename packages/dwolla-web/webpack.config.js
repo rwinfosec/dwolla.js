@@ -1,5 +1,5 @@
 const path = require("path");
-const merge = require("deepmerge");
+const { merge } = require("webpack-merge");
 const S3Plugin = require("webpack-s3-plugin");
 
 const config = (name, override = {}) =>

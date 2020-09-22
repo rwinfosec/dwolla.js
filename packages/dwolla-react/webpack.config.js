@@ -1,5 +1,5 @@
 const path = require("path");
-const merge = require("deepmerge");
+const { merge } = require("webpack-merge");
 
 const config = (name, override = {}) =>
   merge(
