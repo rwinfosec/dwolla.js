@@ -16,11 +16,11 @@
         </style>
         <script type="text/javascript" src="/dwolla-web.js"></script>
         <link rel="stylesheet" href="/styles/main.css">
-        <link rel="stylesheet" href="/styles/document-custom.css">
+        <link rel="stylesheet" href="/styles/balance-custom.css">
         <script>
-            dwolla.configure({ 
-              environment: "sandbox",
-              styles: "/styles/document-custom.css",
+            dwolla.configure({
+              environment: "local",
+              styles: "/styles/balance-custom.css",
               token: () => Promise.resolve(`{{ token }}`),
               success: (res) => Promise.resolve(),
               error: (err) => Promise.resolve()
@@ -31,31 +31,32 @@
         <div class="container">
             <div class="banner-image"><img alt="Dwolla Logo" src="https://slack-integration-sandbox.dwolla.com/images/dwolla-logo-white.svg"></div>
             <div class="container-sm">
-                <h3>Upload A Document</h3>
+                <h3>Balance Display</h3>
                 <div class="orange-border">
-                    <dwolla-document-upload customerId = "{{ customer.id }}"></dwolla-document-upload >
+                    <dwolla-balance-display customerId="c646e19f-b3a3-4a29-b8e4-62edab28fe3d"></dwolla-balance-display>
                 </div>
             </div>
             <div class="container-sm">
-                <p>This is an alpha for the 'document upload' drop-in component. It is still a work in progress and may not completely represent the final product.</p>
+                <p>This is an alpha for the 'balance display' drop-in component. It is still a work in progress and may not completely represent the final product.</p>
                 <div class="code-container">
-                <h3>Uploading A Document With Drop-Ins (Copy + Paste Integration)</h3>
+                <h3>Displaying User Balance With Drop-Ins (Copy + Paste Integration)</h3>
+
 <pre>
     &lt;script type="text/javascript" src="cdn.dwolla.com/2/dwolla.js"&gt;&lt;/script&gt;
     &lt;script type="module" src="cdn.dwolla.com/2/dwolla-components.js"&gt;&lt;/script&gt;
     &lt;script&gt;
         dwolla.configure({
             environment: "sandbox",
-            styles: "/styles/document-custom.css",
+            styles: "styles/balance-custom.css",
             token: () => Promise.resolve("MY_TOKEN"),
             success: (res) => Promise.resolve(res),
             error: (err) => Promise.resolve(err),
         });
     &lt;/script&gt;
 
-    &lt;dwolla-document-upload customerId="customerId"&gt;&lt;/dwolla-document-upload&gt;
-    
+    &lt;dwolla-balance-display customerId="customerId"&gt;&lt;/dwolla-balance-display&gt;
 </pre>
+                    </div>
                 </div>
             </div>
         </div>

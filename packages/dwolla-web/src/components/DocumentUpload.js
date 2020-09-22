@@ -1,4 +1,4 @@
-import "./Error";
+import "./Error.js";
 import "./Success.js";
 
 if (typeof HTMLElement !== "undefined") {
@@ -23,6 +23,7 @@ if (typeof HTMLElement !== "undefined") {
       this.file;
       this.successMessage = "";
       this.errorMessage = "";
+      this.isLoading = "";
     }
 
     changeDocumentType(e) {
@@ -32,6 +33,7 @@ if (typeof HTMLElement !== "undefined") {
 
     handleSubmit() {
       if (this.validate()) {
+        this.isLoading = "dwolla-loading";
         const formData = new FormData();
         formData.append("documentType", "license");
         formData.append("file", this.file);
@@ -39,6 +41,7 @@ if (typeof HTMLElement !== "undefined") {
         dwolla
           .post(`customers/${this.customerId}/documents`, formData)
           .then((res) => {
+            this.isLoading = "";
             if (res && res.success) {
               this.handleSuccess();
             } else {
@@ -58,9 +61,9 @@ if (typeof HTMLElement !== "undefined") {
       this.errorMessage = "";
     }
 
-    handleError(msg) {
+    handleError(res) {
       this.successMessage = "";
-      this.errorMessage = msg;
+      this.errorMessage = res.message;
     }
 
     validate() {
@@ -112,7 +115,7 @@ if (typeof HTMLElement !== "undefined") {
           </div>
 
           <div class="dwolla-document-submit">
-            <input type="submit" value="Submit" @click="${this.handleSubmit}" />
+            <input class="${this.isLoading}" type="submit" value="Submit" @click="${this.handleSubmit}" />
           </div>
         </div>`;
     }

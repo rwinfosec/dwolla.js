@@ -6,7 +6,7 @@
         <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.dwolla.com/com/dist/images/favicons/favicon-32x32_a4dac4e7.png">
         <title>Dwolla</title>
         <link href="https://fonts.googleapis.com/css?family=Poppins:300,400|Roboto:400,700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://w3rwh66232.execute-api.us-west-2.amazonaws.com/dev/styles">
+        <link rel="stylesheet" href="/styles/main.css">
         <style>
             body
             {
@@ -19,23 +19,14 @@
         </script>
     </head>
     <body>
-        <div class="learn-banner" style="height:720px;">
-            <div class="learn-banner-image"><img src="https://slack-integration-sandbox.dwolla.com/images/dwolla-logo-white.svg"></div>
-            <div class="learn-container">
-                <div class="learn-left">
-                    <div class="learn-header">
-                        <img class="learn-dwolla-logo" src="https://slack-integration-sandbox.dwolla.com/images/dwolla-icon.svg">
-                    </div>
-                    <h1>Drop Ins</h1>
-                    <div style=""><a style="margin:10px; padding:10px; border-style:solid; border-color:white; float:left; color:white; text-decoration:none;" href="/upload-document"><h3>Upload Document</h3></a></div>
-                    <div><a style="margin:10px; padding:10px; border-style:solid; border-color:white; float:left; color:white; text-decoration:none;" href="/update-customer"><h3>Update Customer</h3></a></div>
-                    <div></div>
-                </div>
-                <div class="learn-right">
-                    <p style="color:white;">
-                        This is a very simple drop-ins demo. It is experimental, rough, and may not accurately represent the final product.
-                    </p>
-                </div>
+        <div class="container">
+            <div class="banner-image"><img src="https://slack-integration-sandbox.dwolla.com/images/dwolla-logo-white.svg"></div>
+            <div class="container-menu">
+                <h1>Drop Ins</h1>
+                <div class="menu-item"><a href="/upload-document"><h3>Upload Document</h3></a></div>
+                <div class="menu-item"><a href="/update-customer"><h3>Update Customer</h3></a></div>
+                <div class="menu-item"><a href="/balance-display"><h3>Balance Display</h3></a></div>
+                <div></div>
             </div>
         </div>
     </body>
