@@ -115,7 +115,12 @@ if (typeof HTMLElement !== "undefined") {
           </div>
 
           <div class="dwolla-document-submit">
-            <input class="${this.isLoading}" type="submit" value="Submit" @click="${this.handleSubmit}" />
+            <input
+              class="${this.isLoading}"
+              type="submit"
+              value="Submit"
+              @click="${this.handleSubmit}"
+            />
           </div>
         </div>`;
     }

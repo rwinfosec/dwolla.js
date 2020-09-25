@@ -20,15 +20,17 @@ if (typeof HTMLElement !== "undefined") {
       this.errorMessage = "";
     }
 
-    firstUpdated(changedProperties) { 
-        // this.fetchBalance();
+    firstUpdated(changedProperties) {
+      // this.fetchBalance();
     }
 
     fetchBalance() {
-        console.log("fetching it");
+      console.log("fetching it");
       if (this.validate()) {
         dwolla
-          .get(`customers/${this.customerId}/funding-sources?removed=false&embed=balance`)
+          .get(
+            `customers/${this.customerId}/funding-sources?removed=false&embed=balance`
+          )
           .then((res) => {
             if (res && res._embedded) {
               this.handleSuccess(res._embedded);
@@ -40,7 +42,8 @@ if (typeof HTMLElement !== "undefined") {
     }
 
     handleSuccess(embedded) {
-      let balance = embedded["funding-sources"][0]._embedded.balance.balance.value;
+      const balance =
+        embedded["funding-sources"][0]._embedded.balance.balance.value;
       this.balance = `$ ${balance}`;
       this.errorMessage = "";
     }

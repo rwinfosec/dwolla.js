@@ -1,68 +1,69 @@
 .container {
-    height:1420px;
-    background-color:#2d2d48;
-    font-family: 'Poppins', sans-serif;
-    color:white;
+  height: 1420px;
+  background-color: #2d2d48;
+  font-family: "Poppins", sans-serif;
+  color: white;
 }
 
 .container-sm {
-    text-align:center;
-    margin-bottom:50px;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
 .container-menu {
-    width: 1000px;
-    margin-left:auto;
-    margin-right:auto;
-    text-align:center;
-    margin-bottom:50px;
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
 .menu-item a {
-    margin:10px;
-    padding:10px;
-    border-style:solid;
-    border-color:white;
-    float:left;
-    color:#354153;
-    background-color:white;
-    text-decoration:none;
+  margin: 10px;
+  padding: 10px;
+  border-style: solid;
+  border-color: white;
+  float: left;
+  color: #354153;
+  background-color: white;
+  text-decoration: none;
 }
 
 .orange-border {
-    border-style:solid;
-    border-color:#ed8b4e;
-    border-width:1px;
-    padding:20px;
-    width:400px;
-    margin-left:auto;
-    margin-right:auto; 
+  border-style: solid;
+  border-color: #ed8b4e;
+  border-width: 1px;
+  padding: 20px;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .banner-image {
-    height:43px;
-    width:169px;
-    padding:10px;
+  height: 43px;
+  width: 169px;
+  padding: 10px;
 }
 
 .code-container {
-    border-radius: 5px;
-    text-align: left;
-    margin: 0 auto 5px auto;
-    color: #354153;
-    width: 960px;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 19px;
-    background: #fff;
-    padding: 5px 10px;
-    box-shadow: 0 2px 4px 0 rgba(53,65,83, .12), 0 0 2px 0 rgba(53,65,83, .12);
+  border-radius: 5px;
+  text-align: left;
+  margin: 0 auto 5px auto;
+  color: #354153;
+  width: 960px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 19px;
+  background: #fff;
+  padding: 5px 10px;
+  box-shadow: 0 2px 4px 0 rgba(53, 65, 83, 0.12),
+    0 0 2px 0 rgba(53, 65, 83, 0.12);
 }
 
 .pre {
-    width: 740px;
-    font-family: 'monospace';
-    font-weight: 300;
-    text-align:left;
+  width: 740px;
+  font-family: "monospace";
+  font-weight: 300;
+  text-align: left;
 }
